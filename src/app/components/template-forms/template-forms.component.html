@@ -13,20 +13,34 @@
 
     <div class="forms">
 
-        <form>
+        <form #form="ngForm"  (ngSubmit)="onSubmit()">
 
 
             <h1>Login</h1>
 
 
-            <input type="text" placeholder="Enter email">
-
-
-            <input type="text" placeholder="Enter password">
+            <input type="text" placeholder="Enter email" ngModel name="email" email required #email ="ngModel">
 
 
 
-            <button>Login</button>
+            <div class="errors">
+
+
+                <span *ngIf="!email.valid && email.touched">Enter a valid email</span>
+
+            </div>
+
+
+            <input type="password" placeholder="Enter password" ngModel name="password" required #password ="ngModel">
+
+            <div class="errors">
+
+
+                <span *ngIf="!password.valid && password.touched">Enter a valid password</span>
+
+            </div>
+
+            <button [disabled]="!form.valid">Login</button>
             
 
 

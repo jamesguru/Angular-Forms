@@ -8,7 +8,7 @@ const routes: Routes = [
 
   {path:'',component:TemplateFormsComponent},
 
-  {path:"reactive", component:ReactiveFormsComponent}
+  {path:"reactiveforms", component:ReactiveFormsComponent}
 ];
 
 @NgModule({
