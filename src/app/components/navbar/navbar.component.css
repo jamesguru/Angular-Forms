@@ -1,0 +1,75 @@
+.forms{
+
+
+    height: 100px;
+
+    background-color: #df9257;
+
+
+    display: flex;
+
+    align-items: center;
+
+
+    justify-content: space-between;
+
+    color: #fff;
+
+    
+}
+
+
+.logo{
+
+    font-weight: 900;
+
+    font-size: 25px;
+
+    margin-left: 100px;
+
+    
+}
+
+.links{
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-evenly;
+
+    width: 300px;
+
+    margin-right: 100px;
+
+    
+   
+}
+
+
+.template_forms{
+
+    border: 1px solid #fff;
+
+    border-radius: 10px;
+
+    padding: 5px;
+
+}
+
+.template_forms:hover{
+
+
+padding: 5px;
+
+cursor: pointer;
+
+}
+
+.reactive_forms:hover{
+
+    text-decoration: underline;
+
+    cursor: pointer;
+}
+
