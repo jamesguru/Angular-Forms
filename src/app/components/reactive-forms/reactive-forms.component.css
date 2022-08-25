@@ -1,0 +1,120 @@
+.reactive_forms{
+
+    display: flex;
+
+    align-items: center;
+
+    
+}
+
+
+
+.menu{
+
+
+    flex: 1;
+
+
+    margin:100px;
+
+    font-size: 65px;
+
+    font-weight: bolder;
+
+    color: #444;
+
+
+}
+
+.forms{
+
+
+    flex: 2;
+
+    margin: 30px;
+
+    background-color: #df9257;
+
+    height: auto;
+
+    width: 300px;
+
+    color: #fff;
+
+    
+
+}
+
+.forms h1{
+
+
+    margin: 30px;
+}
+
+.forms form{
+
+
+    display: flex;
+
+    flex-direction: column;
+
+
+    width: 70%;
+
+
+    margin: 50px;
+
+
+}
+
+.forms input,select,form-control{
+
+    margin: 20px;
+
+    border: none;
+
+    padding: 10px;
+}
+
+.submit-btn{
+
+    width: 150px;
+
+    margin: 50px;
+
+    border: none;
+
+    padding: 10px;
+
+    cursor: pointer;
+
+    color: #df9257;
+
+    font-weight: bold;
+}
+
+
+.add-btn{
+
+
+    border: none;
+
+    width: 150px;
+    padding: 5px;
+
+    color: #df9257;
+
+    cursor: pointer;
+}
+
+input.ng-touched.ng-invalid{
+
+    border-left: px solid red;
+}
+
+input.ng-valid.ng-touched{
+
+    border-left: 5px solid green;
+
+
+}

@@ -1,1 +1,94 @@
-<p>reactive-forms works!</p>
+<div class="reactive_forms">
+
+
+
+    <div class="menu">
+
+
+        <span>Reactive Forms</span>
+
+
+    </div>
+
+
+    <div class="forms">
+
+        <form  [formGroup]="form"  >
+
+
+            <h2>Register</h2>
+
+
+            <label for="">Email</label>
+
+            <input type="text" placeholder="Enter email" formControlName="email">
+
+
+            <div>
+
+                <p class="errors" *ngIf="!form.get('name')!.valid && form.get('name')!.touched">*Please enter a name</p>
+            </div>
+
+            <label for="name">Name</label>
+
+            <input type="text" placeholder="Enter name" formControlName="name">
+
+
+            <label for="password">Password</label>
+            <input type="password" placeholder="Enter password" formControlName="password">
+
+
+            <label for="confirm">Confirm password</label>
+            <input type="password" placeholder="Enter password" formControlName="confirmPassword">
+
+           
+       <div class="languange">
+
+
+
+            <select formControlName="language">
+
+                <option value="">Select Programming Language</option>
+
+                <option value="">Javascript</option>
+
+                <option value="">Python</option>
+
+                <option value="">Java</option>
+            </select>
+
+        </div>
+
+            <div class="form-control">
+
+                <label for="" >Level</label > 
+
+                <div>
+
+                    <input value="l" type="radio"> Pro
+
+                    <input value="l" type="radio"> Beginner
+                </div>
+            </div>
+
+
+            <div class="skills">
+
+                
+
+               <button class="add-btn" type="button" (click)="onAdd()">Add skills</button>
+            </div>
+
+
+
+           
+            <button class="submit-btn" (click)="onSubmit()">Submit</button>
+
+
+            
+        
+        </form>
+
+
+    </div>
+</div>

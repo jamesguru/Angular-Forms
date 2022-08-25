@@ -17,6 +17,8 @@ export class TemplateFormsComponent implements OnInit {
 
   @ViewChild('form') form!:NgForm; 
 
+  templateemail: any;
+
 
   onSubmit(){
 
@@ -35,5 +37,13 @@ export class TemplateFormsComponent implements OnInit {
     // this.form.reset()
 
   }
+
+
+ // template(templateemail:any){
+
+    //this.templateemail = templateemail;
+
+    //console.log(this.templateemail)
+  //}
 
 }
