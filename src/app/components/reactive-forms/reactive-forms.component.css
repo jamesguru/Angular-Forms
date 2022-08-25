@@ -118,3 +118,38 @@ input.ng-valid.ng-touched{
 
 
 }
+
+
+.skills{
+
+    display: flex;
+
+    align-items: center;
+
+    width: 30%;
+
+    height: auto;
+}
+
+.cancel{
+
+    background-color: #d1411e;
+
+
+    padding: 10px;
+    height: 40px;
+
+    width: 40px;
+    border-radius: 50%;
+
+    cursor: pointer;
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: 900;
+
+   
+}

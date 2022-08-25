@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
+import {
+  AsyncValidatorFn,
+  FormArray,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-forms',
@@ -13,12 +19,16 @@ export class ReactiveFormsComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      name: new FormControl('John Doe', Validators.min(5)),
-
-      email: new FormControl('johndoe@gmail.com', [
-        Validators.email,
+      name: new FormControl(null, [
         Validators.required,
+        this.checkName.bind(this),
       ]),
+
+      email: new FormControl(
+        'johndoe@gmail.com',
+        [Validators.required, Validators.email],
+        this.checkEmails.bind(this) as AsyncValidatorFn
+      ),
 
       language: new FormControl('select'),
 
@@ -32,13 +42,66 @@ export class ReactiveFormsComponent implements OnInit {
     });
   }
 
+  unallowednames = ['Angular', 'react', 'snooze', 'break', 'waterfield'];
+
+  unallowedemails = [
+    'test@gmail.com',
+    'helloo@gmail.com',
+    'test@gmail.com',
+    'why@gmail.com',
+  ];
+
   onAdd() {
     const control = new FormControl('new skill', Validators.required);
 
     (this.form.get('skills') as FormArray).push(control);
   }
 
+  getControls() {
+    return (this.form.get('skills') as FormArray).controls;
+  }
+
   onSubmit() {
     console.log(this.form);
+  }
+
+  onRemove(i: number) {
+    (this.form.get('skills') as FormArray).removeAt(i);
+  }
+
+  checkName(control: FormControl): { [s: string]: boolean } | null {
+    if (this.unallowednames.includes(control.value)) {
+      return { nameForbidden: true };
+    }
+
+    return null;
+  }
+
+  checkEmails(control: FormControl): Promise<{ [s: string]: boolean } | null> {
+    const promise = new Promise<{ [s: string]: boolean } | null>(
+      (resolve, reject) => {
+        setTimeout(() => {
+          if (this.unallowedemails.includes(control.value)) {
+            resolve({ unallowedEmail: true });
+          }
+
+          resolve(null);
+        });
+      }
+    );
+
+    return promise;
+  }
+
+  onUpdate() {
+    this.form.setValue({
+      name: 'James K',
+
+      email: 'jameskagunga15@gmail.com',
+
+      level: 'Pro',
+    });
+
+    this.form.reset();
   }
 }

@@ -14,7 +14,7 @@
     <div class="forms">
 
         <form  [formGroup]="form"  >
-
+  
 
             <h2>Register</h2>
 
@@ -24,9 +24,25 @@
             <input type="text" placeholder="Enter email" formControlName="email">
 
 
-            <div>
+            <div *ngIf="!form.get('email')!.valid && form.get('email')!.touched">
 
-                <p class="errors" *ngIf="!form.get('name')!.valid && form.get('name')!.touched">*Please enter a name</p>
+
+                <p class="error" *ngIf="form.get('email')!.errors!['required']">*Please enter a email</p>
+
+                <p class="error" *ngIf="form.get('email')!.errors!['required']">*Please enter a email</p>
+
+                <p class="error" *ngIf="form.get('email')!.errors!['unallowedEmail']">*Unallowed email</p>
+
+
+
+            </div>
+
+
+            <div *ngIf="!form.get('name')!.valid && form.get('name')!.touched">
+
+                <p class="errors" *ngIf="form.get('name')!.errors!['required']">*Please enter a name</p>
+
+                <p class="errors" *ngIf="form.get('name')!.errors!['nameForbidden']">*You are not allowed to add that name</p>
             </div>
 
             <label for="name">Name</label>
@@ -72,11 +88,35 @@
             </div>
 
 
-            <div class="skills">
 
-                
 
-               <button class="add-btn" type="button" (click)="onAdd()">Add skills</button>
+            <h3>skills</h3>
+
+
+            <button class="add-btn" type="button" (click)="onAdd()">Add skills</button>
+            <div>
+
+               
+
+        
+                    <div  *ngFor="let control of getControls() ; let i=index" class="skills">
+
+
+                       
+
+
+                            <input [formControlName] = "i" />
+
+                            <p (click)="onRemove(i)" class="cancel">X</p>
+
+
+
+                       
+                        
+
+
+                    </div>
+
             </div>
 
 
