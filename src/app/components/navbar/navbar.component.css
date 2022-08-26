@@ -46,9 +46,9 @@ a{
 
     justify-content: space-evenly;
 
-    width: 300px;
+    
 
-    margin-right: 100px;
+    margin-right: 20px;
 
     
    
@@ -63,6 +63,8 @@ a{
 
     padding: 5px;
 
+    
+
 }
 
 .template_forms:hover{
@@ -74,10 +76,18 @@ cursor: pointer;
 
 }
 
+
+.reactive_forms{
+
+    margin: 20px;
+}
+
 .reactive_forms:hover{
 
     text-decoration: underline;
 
     cursor: pointer;
+
+   
 }
 

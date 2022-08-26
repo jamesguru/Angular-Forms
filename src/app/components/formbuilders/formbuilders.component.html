@@ -1,0 +1,22 @@
+<div class="container">
+
+
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <div class="reset_password">
+
+        <span class="password">Reset Password?</span>
+
+
+        <input type="text" placeholder="Enter password" formControlName="name">
+
+        <input type="password" placeholder="password" formControlName="password">
+
+        <input type="password" placeholder="confirm the password" formControlName="confirmPassword">
+
+        <button class="reset-btn">Reset</button>
+    </div>
+
+</form>
+</div>

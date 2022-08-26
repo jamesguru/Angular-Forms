@@ -109,7 +109,7 @@
 
 input.ng-touched.ng-invalid{
 
-    border-left: px solid red;
+    border-left: 5px solid red;
 }
 
 input.ng-valid.ng-touched{
@@ -152,4 +152,9 @@ input.ng-valid.ng-touched{
     font-weight: 900;
 
    
+}
+
+.error{
+
+    color: red;
 }

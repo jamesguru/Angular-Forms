@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-template-forms',
@@ -19,12 +20,13 @@ export class TemplateFormsComponent implements OnInit {
 
   templateemail: any;
 
+  router!:Router;
+
 
   onSubmit(){
 
 
     console.log(this.form);
-
 
 
     this.form.setValue({
@@ -35,6 +37,10 @@ export class TemplateFormsComponent implements OnInit {
     })
 
     // this.form.reset()
+
+
+    this.router.navigate(['reactiveforms'])
+    
 
   }
 

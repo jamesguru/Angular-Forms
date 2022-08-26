@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ReactiveFormsComponent } from './components/reactive-forms/reactive-forms.component';
 import { TemplateFormsComponent } from './components/template-forms/template-forms.component';
+import { FormbuildersComponent } from './components/formbuilders/formbuilders.component';
 
 @NgModule({
   declarations: [
@@ -14,14 +15,18 @@ import { TemplateFormsComponent } from './components/template-forms/template-for
     NavbarComponent,
     ReactiveFormsComponent,
     TemplateFormsComponent,
-    AppComponent
+    AppComponent,
+    FormbuildersComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
+    
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
